@@ -4,84 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sevgilim İçin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Temel stil ayarları */
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background: linear-gradient(to right, #FFB6C1, #FFCCCB),
+                        url('https://upload.wikimedia.org/wikipedia/commons/3/33/Red_heart_symbol.svg');
+            background-size: 60px 60px;
+            background-repeat: repeat;
             color: #333;
-            overflow-x: hidden; /* Yan kaydırma çubuğunu gizlemek için */
+            overflow-x: hidden;
+            transition: background 0.5s ease;
         }
-
+        
         header {
-            background-color: #ffccd5;
+            background: url('https://example.com/romantic-image.jpg') no-repeat center center/cover;
+            padding: 150px 20px;
             text-align: center;
-            padding: 60px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+            color: #ffffff;
+            border-radius: 20px;
+            background-blur: 5px;
+            backdrop-filter: blur(5px); /* Daha yumuşak arka plan bulanıklığı */
         }
 
         header h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
-            color: #d32f2f;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: #FF6347;
+            letter-spacing: 3px;
             margin-bottom: 20px;
             animation: fadeIn 2s ease-in-out;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
         }
 
         header p {
-            font-size: 1.5rem;
-            color: #333;
+            font-size: 2rem;
+            color: #f8f8f8;
             margin-bottom: 40px;
+            font-weight: 300;
             animation: fadeIn 3s ease-in-out;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Fotoğraf galerisi */
         .gallery {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
             padding: 40px;
         }
 
         .photo {
-            width: 45%;
-            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
-            opacity: 0; /* Başlangıçta fotoğrafları gizleyelim */
-            transform: translateY(30px); /* Fotoğrafları biraz yukarıdan başlatıyoruz */
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Yumuşak geçiş ekleyelim */
-        }
-
-        .photo.visible {
-            opacity: 1; /* Opaklık değişimi */
-            transform: translateY(0); /* Fotoğraf normal konumuna gelir */
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .photo img {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: auto;
+            border-radius: 15px;
             transition: transform 0.3s ease-in-out;
         }
 
-        .photo img:hover {
-            transform: scale(1.05); /* Fotoğraf üzerine gelindiğinde büyür */
-        }
-
         .photo p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-style: italic;
-            margin-top: 10px;
-            color: #333;
+            margin-top: 15px;
+            color: #555;
         }
-
         /* Müzik kısmı */
         .music {
             text-align: center;
             margin: 50px 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
         }
 
         .music iframe {
@@ -89,21 +109,23 @@
             max-width: 700px;
             height: 400px;
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Zaman tüneli */
         .timeline {
-            background-color: #f2e0a7;
+            background-color: #F9E1E6;
             padding: 50px 20px;
             margin-bottom: 80px;
             text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
 
         .timeline h2 {
             font-size: 2.5rem;
-            color: #d32f2f;
+            color: #D32F2F;
             margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
         }
 
         .timeline ul {
@@ -117,70 +139,104 @@
         .timeline li {
             font-size: 1.3rem;
             margin: 20px 0;
-            opacity: 0; /* Başlangıçta zaman tünelindeki öğeleri gizleyelim */
-            transform: translateY(20px); /* Öğeler biraz aşağıda başlayacak */
+            opacity: 0;
+            transform: translateY(20px);
             transition: opacity 1s ease-in-out, transform 1s ease-in-out;
         }
 
         .timeline li.visible {
             opacity: 1;
-            transform: translateY(0); /* Öğeler normal konumlarına gelir */
+            transform: translateY(0);
         }
 
         .timeline li:hover {
-            transform: translateX(10px); /* Hover efekti */
-            color: #d32f2f;
+            transform: translateX(10px);
+            color: #D32F2F;
         }
-
-        /* Footer */
-        footer {
-            background-color: #ffccd5;
+        .password-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+    
+        .password-input {
+            padding: 15px;
+            font-size: 1.5rem;
+            border: 2px solid #FF6347;
+            border-radius: 10px;
+            outline: none;
+            width: 250px;
+            max-width: 90%;
+            margin-bottom: 20px;
             text-align: center;
-            padding: 20px;
-            position: fixed;
+            transition: border 0.3s ease;
+        }
+    
+        .password-input:focus {
+            border-color: #FF4500;
+        }
+    
+        .password-button {
+            padding: 15px 30px;
+            background-color: #FF6347;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .password-button:hover {
+            background-color: #FF4500;
+        }
+    
+        .password-button:focus {
+            outline: none;
+        }
+        footer {
+            background-color: #FF6347;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
             bottom: 0;
             width: 100%;
-            font-size: 1.2rem;
-            color: #333;
+            font-size: 1.3rem;
             font-weight: bold;
+            box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.2);
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
         }
 
-        /* Responsive tasarım */
-        @media (max-width: 768px) {
-            .gallery {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .photo {
-                width: 80%;
-            }
-
-            .music iframe {
-                max-width: 100%;
-                height: 300px;
-            }
+        footer p {
+            margin: 0;
+            padding: 0;
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
         }
 
-        /* Animasyonlar */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
+        @media screen and (max-width: 768px) {
+            footer {
+                font-size: 1.1rem;
+                padding: 20px;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+
+            header h1 {
+                font-size: 3rem;
+            }
+
+            header p {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="hero">
-            <h1>Seni Çookkk Seviyorum Sıla</h1>
-            <p>Birlikte geçirdiğimiz her an, özel ve unutulmaz!</p>
-        </div>
+        <h1>Seni Çookkk Seviyorum Sıla</h1>
+        <p>Birlikte geçirdiğimiz her an, özel ve unutulmaz!</p>
     </header>
 
     <section class="gallery">
@@ -211,11 +267,13 @@
     </section>
 
     <section class="music">
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Z1Deriju6CQ?si=gnJ0Bw2wnVmVLc-9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Z1Deriju6CQ?si=gnJ0Bw2wnVmVLc-9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </section>
-
+<!-- Şifre Kutusu -->
+<section class="password-container">
+    <input type="password" id="password" class="password-input" placeholder="Şifrenizi Girin">
+    <button class="password-button" onclick="checkPassword()">Giriş Yap</button>
+</section>
     <section class="timeline">
         <h2>Birlikte Geçirdiğimiz Zaman</h2>
         <ul>
@@ -227,23 +285,32 @@
     <footer>
         <p>İyi Ki Varsın, Sıla. Her anımız özel ve bir o kadar değerli!</p>
     </footer>
-    
     <script>
+    // Doğru şifreyi kontrol etme
+    const correctPassword = "15.10.24"; // Yeni şifre
+
+    function checkPassword() {
+        const userPassword = document.getElementById("password").value;
+        if (userPassword === correctPassword) {
+            // Şifre doğruysa yeni sayfayı aç
+            window.location.href = "gallery.html"; // gallery.html sayfasına yönlendir
+        } else {
+            alert("Yanlış şifre! Lütfen tekrar deneyin.");
+        }
+    }
         document.addEventListener("DOMContentLoaded", function() {
-            // Fotoğraflar için animasyon
             let photos = document.querySelectorAll('.photo');
             photos.forEach((photo, index) => {
                 setTimeout(() => {
-                    photo.classList.add('visible'); // Fotoğraf görünür olmalı
-                }, index * 300); // Fotoğraflar arasında 300ms'lik bir gecikme
+                    photo.classList.add('visible');
+                }, index * 300);
             });
 
-            // Zaman tüneli öğeleri için animasyon
             let timelineItems = document.querySelectorAll('.timeline li');
             timelineItems.forEach((item, index) => {
                 setTimeout(() => {
-                    item.classList.add('visible'); // Zaman tüneli öğesi görünür olmalı
-                }, index * 300); // Zaman tüneli öğeleri arasında 300ms'lik bir gecikme
+                    item.classList.add('visible');
+                }, index * 300);
             });
         });
     </script>
