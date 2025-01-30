@@ -241,16 +241,20 @@
 /* 320px altındaki ekranlar için ayar yapalım */
 @media screen and (max-width: 320px) {
     .gallery {
-        grid-template-columns: 1fr; /* 1 sütun */
+        grid-template-columns: repeat(2, 1fr); /* 2 sütun düzeni */
     }
 
     .photo {
-        padding: 2px; /* Fotoğraf kutusunun içini çok daha küçültüyoruz */
+        padding: 5px; /* Fotoğraf kutusunun içini biraz küçültüyoruz */
     }
 
     .photo img {
         max-width: 100%; /* Fotoğrafları tam genişlikte yapalım */
         height: auto; /* Yükseklik oranını koruyalım */
+    }
+
+    .password-input {
+        width: 200px; /* Şifre kutusunun genişliğini 200px yapıyoruz */
     }
 }
     </style>
