@@ -63,14 +63,13 @@
             }
         }
 
-        /* Fotoğraf galerisi */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 40px;
-        }
-
+/* Fotoğraf galerisi */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
         .photo {
             background: rgba(255, 255, 255, 0.7);
             padding: 20px;
@@ -217,20 +216,27 @@
             opacity: 0.9;
         }
 
-        @media screen and (max-width: 768px) {
-            footer {
-                font-size: 1.1rem;
-                padding: 20px;
-            }
+/* 768px altındaki ekranlar için 2 sütun yapalım */
+@media screen and (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 sütun */
+    }
 
-            header h1 {
-                font-size: 3rem;
-            }
+    .photo {
+        padding: 10px; /* Fotoğraf kutusunun içini biraz küçültüyoruz */
+    }
+}
 
-            header p {
-                font-size: 1.5rem;
-            }
-        }
+/* 480px altındaki ekranlar için 1 sütun yapalım */
+@media screen and (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 sütun */
+    }
+
+    .photo {
+        padding: 5px; /* Fotoğraf kutusunun içini daha da küçültüyoruz */
+    }
+}
     </style>
 </head>
 <body>
