@@ -65,6 +65,7 @@
             padding: 20px;
             position: relative;
         }
+
         .photo {
             background: white;
             position: relative;
@@ -101,15 +102,33 @@
             filter: none; /* Varsayılan durumda bulanıklık yok */
         }
 
+        /* 768px ve altındaki ekranlar */
         @media (max-width: 768px) {
             .gallery {
                 grid-template-columns: repeat(3, 1fr); /* 3 sütun olacak */
             }
+            .photo {
+                height: 250px; /* Fotoğraf boyutlarını aynı yap */
+            }
         }
 
+        /* 480px ve altındaki ekranlar */
         @media (max-width: 480px) {
             .gallery {
+                grid-template-columns: repeat(2, 1fr); /* 2 sütun olacak */
+            }
+            .photo {
+                height: 200px; /* Fotoğraf boyutlarını aynı yap */
+            }
+        }
+
+        /* 320px ve altındaki ekranlar */
+        @media (max-width: 320px) {
+            .gallery {
                 grid-template-columns: 1fr; /* 1 sütun olacak */
+            }
+            .photo {
+                height: 150px; /* Fotoğraf boyutlarını aynı yap */
             }
         }
     </style>
