@@ -237,6 +237,22 @@
         padding: 5px; /* Fotoğraf kutusunun içini daha da küçültüyoruz */
     }
 }
+
+/* 320px altındaki ekranlar için ayar yapalım */
+@media screen and (max-width: 320px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 sütun */
+    }
+
+    .photo {
+        padding: 2px; /* Fotoğraf kutusunun içini çok daha küçültüyoruz */
+    }
+
+    .photo img {
+        max-width: 100%; /* Fotoğrafları tam genişlikte yapalım */
+        height: auto; /* Yükseklik oranını koruyalım */
+    }
+}
     </style>
 </head>
 <body>
