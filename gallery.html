@@ -73,8 +73,9 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             transition: transform 0.3s ease, filter 0.3s ease; /* Filtre ve transform geçişi */
+            height: 250px; /* Fotoğraf boyutlarını aynı yap */
         }
-        
+
         /* Fotoğrafın içeriği */
         .photo img {
             width: 100%;
@@ -83,34 +84,34 @@
             display: block;
             transition: transform 0.3s ease; /* Fotoğrafın büyüme geçişi */
         }
-        
+
         /* Fotoğrafa hover yapıldığında sadece o fotoğraf büyür */
         .photo:hover {
             transform: scale(1.2); /* Fotoğraf büyür */
             z-index: 10; /* Büyüyen fotoğraf ön planda olacak */
         }
-        
+
         /* Diğer fotoğraflar bulanıklaşacak */
         .photo:hover:not(:hover) {
             filter: blur(5px); /* Hover dışında kalan fotoğraflar bulanıklaşacak */
         }
-        
+
         /* Normalde hiçbir fotoğraf bulanık olmamalı */
         .photo {
             filter: none; /* Varsayılan durumda bulanıklık yok */
         }
+
         @media (max-width: 768px) {
             .gallery {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr); /* 3 sütun olacak */
             }
         }
 
         @media (max-width: 480px) {
             .gallery {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* 1 sütun olacak */
             }
         }
-
     </style>
 </head>
 <body>
@@ -134,61 +135,61 @@
 
         <!-- Fotoğraf Galerisi -->
         <section class="gallery">
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="WhatsApp Görsel 2025-01-26 saat 21.20.09_65533c18.jpg" alt="Fotoğraf 1">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="WhatsApp Görsel 2025-01-26 saat 21.20.12_80fce4e2.jpg" alt="Fotoğraf 2">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="WhatsApp Görsel 2025-01-26 saat 21.20.13_9b3ebb82.jpg" alt="Fotoğraf 3">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="WhatsApp Görsel 2025-01-26 saat 21.20.14_c3cf2dd9.jpg" alt="Fotoğraf 4">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="WhatsApp Görsel 2025-01-26 saat 21.20.14_210edb46.jpg" alt="Fotoğraf 5">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="WhatsApp Görsel 2025-01-26 saat 21.20.13_fff39689.jpg" alt="Fotoğraf 6">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="0.jpg" alt="Fotoğraf 7">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="1.jpg" alt="Fotoğraf 8">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="2.jpg" alt="Fotoğraf 9">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="3.jpg" alt="Fotoğraf 10">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="4.jpg" alt="Fotoğraf 11">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="5.jpg" alt="Fotoğraf 12">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="6.jpg" alt="Fotoğraf 13">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="7.jpg" alt="Fotoğraf 14">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="8.jpg" alt="Fotoğraf 15">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="9.jpg" alt="Fotoğraf 16">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="sa.jpg" alt="Fotoğraf 17">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="as.jpg" alt="Fotoğraf 18">
             </div>
-            <div class="photo" onmousedown="setActive(this)" onmouseup="removeActive()" onmouseleave="removeActive()">
+            <div class="photo">
                 <img src="nbr.jpg" alt="Fotoğraf 19">
             </div>
         </section>
